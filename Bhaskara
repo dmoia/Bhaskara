@@ -1,0 +1,76 @@
+/**
+Universidade Estácio de Sá
+Trabalho de Algoritmo
+Alunos: Danielly Moia Ribeiro e Gabriel Oliveira Martins 
+Programa: Calcular Delta, Fórmula de Bhaskara e exibir resultado.
+*/
+
+//Biblioteca para entrada e saída de dados.
+#include<stdio.h>
+//Biblioteca para a função de pausa no final do programa.
+#include<conio.h>
+//Biblioteca para a função setlocale que ajusta a acentuação.
+#include<locale.h>
+//Biblioteca para encontrar funções para calcular potências e raízes quadrada.
+#include<math.h>
+
+/** Declarando a função principal.
+    Obs.: é void pois não possui retorno.
+*/ 
+int main(void){
+
+    //Função para corrigir a acentuação gráfica.
+    setlocale(LC_ALL, "");
+    
+    /**
+       Declarando 6 variáveis como float, pois podem receber números decimais.
+       a, b e c: para os coeficientes da equação quadrática;
+       delta: para receber o resultado da fórmula de delta;
+       x1 e x2: para receber o resultado da fórmula de Bhaskara.
+    */
+    float a, b, c, delta, x1, x2;
+    
+    //Apresentação do programa para o usuário.
+    printf("\nCalcular o delta e Calcular a formula de Bhaskara");
+    
+    //Solicitando ao usuário que digite o primeiro valor.
+    printf("\n\nDigite o valor de a: ");
+    //Recebendo e armazenando o primeiro valor na variável a.
+    scanf("%f", &a);
+    
+    //Solicitando ao usuário que digite o segundo valor.
+    printf("\nDigite o valor de b: ");
+    //Recebendo e armazenando o segundo valor na variável b.
+    scanf("%f", &b);
+    
+    //Solicitando ao usuário que digite o terceiro valor.
+    printf("\nDigite o valor de c: ");
+    //Recebendo e armazenando o terceiro valor na variável c.
+    scanf("%f", &c);
+  
+    //Operação que recebe a fórmula de delta.
+    delta = (b*b)-4*a*c;
+   
+    /**
+    Estrutura de controle para calcular a fórmula de Bhaskara caso o delta
+    seja maior que zero.
+    */
+    if (delta>0) {
+                  
+    x1=((-b)+sqrt(delta))/2*a;
+    printf("\n\nValor de X1: %.2f", x1);
+    
+    x2=((-b)-sqrt(delta))/2*a;    
+    printf("\n\nValor de X2: %.2f", x2);
+    
+    }else{     
+    
+    //Mostra ao usuário caso a equação não possua raizes reais.    
+    printf("\n\nA equação não possui raizes reais");
+    
+}
+
+//Função de pausa (para a aplicação não fechar após executar a linha anterior).
+getch();
+
+} //Encerrando a função principal.
